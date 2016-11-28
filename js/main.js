@@ -13,7 +13,7 @@ $(document).ready(function() {
         $("#need").fadeIn(1000);
     });
 
-    var getJ = $.getJSON("http://quotes.rest/qod/categories.json", function(result) {
+    var getJ = $.getJSON("https://quotes.rest/qod/categories.json", function(result) {
         $.each(result.contents.categories, function(i, item) {
 
             var btnid = i + 'BTN';
@@ -26,7 +26,7 @@ $(document).ready(function() {
             $("#" + btnid).click(function() {
                 console.log(i);
                 $("#nq").empty();
-                $.getJSON("http://quotes.rest/qod.json?category=" + i, function(data) {
+                $.getJSON("https://quotes.rest/qod.json?category=" + i, function(data) {
                     $.each(data.contents.quotes, function(a, b) {
                         var q = b.quote;
                         var author = b.author;
@@ -72,7 +72,7 @@ $(document).ready(function() {
 
     $("#dayQ").click(function() {
         /* Act on the event */
-        $.getJSON("http://quotes.rest/qod.json", function(quoteDay) {
+        $.getJSON("https://quotes.rest/qod.json", function(quoteDay) {
             $.each(quoteDay.contents.quotes, function(q, w) {
                 var im = w.background;
                 var q1 = w.quote;
